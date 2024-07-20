@@ -6,7 +6,7 @@ const paintings = [
       size: '24×18 inches',
       price: 45000,
       artist: 'Dr. L. Ramanujam',
-      image: '/images/painting1.jpg',
+      image: 'https://via.placeholder.com/600x300',
     },
     {
       id: '2',
@@ -15,7 +15,7 @@ const paintings = [
       size: '36×24 inches',
       price: 80000,
       artist: 'Mrs. R.',
-      image: '/images/painting2.jpg',
+      image: 'https://via.placeholder.com/600x300',
     },
     {
       id: '3',
@@ -24,7 +24,7 @@ const paintings = [
       size: '30×24 inches',
       price: 60000,
       artist: 'Dr. L. Ramanujam',
-      image: '/images/painting3.jpg',
+      image: 'https://via.placeholder.com/600x300',
     },
     {
       id: '4',
@@ -33,7 +33,7 @@ const paintings = [
       size: '18×14 inches',
       price: 25000,
       artist: 'Mrs. R.',
-      image: '/images/painting4.jpg',
+      image: 'https://via.placeholder.com/600x300',
     },
     {
       id: '5',
@@ -42,7 +42,7 @@ const paintings = [
       size: '24×18 inches',
       price: 45000,
       artist: 'Dr. L. Ramanujam',
-      image: '/images/painting5.jpg',
+      image: 'https://via.placeholder.com/600x300',
     },
     {
       id: '6',
@@ -51,7 +51,7 @@ const paintings = [
       size: '36×24 inches',
       price: 80000,
       artist: 'Mrs. R.',
-      image: '/images/painting6.jpg',
+      image: 'https://via.placeholder.com/600x300',
     },
   ];
   

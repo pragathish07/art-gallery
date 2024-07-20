@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../services/AuthContext';
 
 const Navbar = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
   const [visible, setVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const { currentUser , logout, isAdmin } = useAuth()
+  const navigate = useNavigate()
+
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       const isVisible = prevScrollPos > currentScrollPos;
 
       setPrevScrollPos(currentScrollPos);
@@ -90,15 +94,7 @@ const Navbar = () => {
                   Gallery
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/pricing"
-                  className="text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-lg font-medium dark:text-white dark:hover:bg-gray-700"
-                  onClick={closeMobileMenu}
-                >
-                  Pricing
-                </Link>
-              </li>
+             
               <li>
                 <Link
                   to="/contact"
@@ -108,6 +104,49 @@ const Navbar = () => {
                   Contact
                 </Link>
               </li>
+              {isAdmin && (
+                 <li>
+                 <Link
+                   to="/dashboard"
+                   className="text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-lg font-medium dark:text-white dark:hover:bg-gray-700"
+                   onClick={closeMobileMenu}
+                 >
+                   Dashboard
+                 </Link>
+               </li>
+              )}
+              {!currentUser && (
+            <li>
+            <button
+              onClick={()=>{navigate('/signup')} }
+
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              SignUp
+            </button>
+          </li>
+          )}
+          {!currentUser && (
+            <li>
+            <button
+              onClick={()=>{navigate('/login')} }
+
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              Login
+            </button>
+          </li>
+          )}
+              {currentUser && (
+            <li>
+            <button
+              onClick={logout}
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              Logout
+            </button>
+          </li>
+          )}
             </ul>
             <button
               onClick={closeMobileMenu}
@@ -152,14 +191,7 @@ const Navbar = () => {
                 Gallery
               </Link>
             </li>
-            <li>
-              <Link
-                to="/pricing"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Pricing
-              </Link>
-            </li>
+            
             <li>
               <Link
                 to="/contact"
@@ -168,6 +200,49 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+            {isAdmin && (
+              <li>
+              <Link
+                to="/dashboard"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                Dashboard
+              </Link>
+            </li>
+            )}
+            {!currentUser && (
+            <li>
+            <button
+              onClick={()=>{navigate('/signup')} }
+
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              SignUp
+            </button>
+          </li>
+          )}
+          {!currentUser && (
+            <li>
+            <button
+              onClick={()=>{navigate('/login')} }
+
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              Login
+            </button>
+          </li>
+          )}
+            {currentUser && (
+            <li>
+            <button
+              onClick={logout}
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              Logout
+            </button>
+          </li>
+          )}
+          
           </ul>
         </div>
       </div>

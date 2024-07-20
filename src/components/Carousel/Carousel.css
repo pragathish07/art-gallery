@@ -3,11 +3,13 @@
   margin: 0 auto;
   height: 600px;
   overflow: hidden;
+
 }
 
 .carousel-slide {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  height: 100%;
 }
 
 .carousel-item {
@@ -48,4 +50,14 @@
 
 .carousel-control.next {
   right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    height: 500px;
+  }
+  .carousel-slide{
+    height: 500px;
+  }
+  
 }
