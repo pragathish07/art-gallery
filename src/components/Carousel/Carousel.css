@@ -60,4 +60,22 @@
     height: 500px;
   }
   
+
+
+
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  display: flex;
+  animation: marquee 30s linear infinite;
 }
