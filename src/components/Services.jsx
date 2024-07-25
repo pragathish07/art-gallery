@@ -1,111 +1,91 @@
-import React, { useState } from 'react';
-import 'tailwindcss/tailwind.css';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { MdLocationOn } from 'react-icons/md';
 
-const Services = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const Navigate = useNavigate()
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic, e.g., sending an email or saving to the database
-    console.log('Form data:', formData);
-    // Clear form fields after submission
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  const works = [
-    { title: 'Traditional Tanjore Painting', image: '/images/work1.jpg' },
-    { title: 'Custom Portrait', image: '/images/work2.jpg' },
-    { title: 'Madhubani Art', image: '/images/work3.jpg' },
-  ];
-
+const ServicePage = () => {
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-center text-gray-900 mb-8">Our Services</h1>
+    <div className="bg-gradient-to-r from-indigo-50 via-white to-indigo-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 text-gray-900 dark:text-white py-10 px-5 md:px-10 lg:px-20 mt-20">
+      <div className="max-w-7xl mx-auto">
+        <header className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-4">Sri Ranga Tanjore Art Gallery</h1>
+          <p className="text-xl md:text-2xl font-semibold">Celebrating a Legacy of Artistic Excellence</p>
+        </header>
+{/* 
+        <section className="mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">Leadership: Mrs. R. Lavanya</h2>
+          <p className="mb-4">
+            Mrs. R. Lavanya, the Managing Director of Sri Ranga Tanjore Art Gallery, has seamlessly carried forward her father’s legacy.
+            Under her leadership, the gallery has flourished, preserving the rich heritage of Tanjore Art and extending its reach globally.
+          </p>
+          <h3 className="text-xl font-semibold mb-2">Recognitions:</h3>
+          <ul className="list-disc list-inside mb-4">
+            <li>Raja Kalaignan Lifetime Achievement Award (2014)</li>
+          </ul>
+          <h3 className="text-xl font-semibold mb-2">Contributions and Initiatives:</h3>
+          <ul className="list-disc list-inside mb-4">
+            <li>Reviving Heritage: Innovatively reviving traditional art through contemporary methods.</li>
+            <li>Empowering Women: Using Tanjore Painting as a tool for societal change and women's empowerment.</li>
+            <li>Cultural Connections: Her artworks have been displayed at the prestigious Ayodhya Ramar Temple.</li>
+            <li>Artistic Engagement: Presented a Tanjore Painting at the Dinamalar Editor's Family Function.</li>
+          </ul>
+          <p>
+            Under Mrs. R. Lavanya's stewardship, the gallery has expanded its services, offering custom orders and delivering artworks and expertise worldwide.
+            Her teachings have crossed borders, with students globally carrying forward the heritage and artistry of Tanjore Painting.
+          </p>
+        </section> */}
 
-      <section className="mb-16">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Send Us a Message for Custom Orders</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-lg font-medium text-gray-700">Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              className="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-lg font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-lg font-medium text-gray-700">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              required
-              className="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-            />
-          </div>
-          <button
-            type="submit"
-            className="mt-4 w-full p-2 bg-yellow-500 text-white rounded-lg"
-          >
-            Send Message
-          </button>
-        </form>
-      </section>
+        <section className="mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold  dark:text-indigo-400 mb-4">Our Offerings</h2>
+          <p className="mb-4">
+            At Sri Ranga Tanjore Art Gallery, we offer a diverse range of traditional and authentic handmade Tanjore Paintings, meticulously crafted to suit various preferences and spaces. 
+            Our collection includes sizes from compact pieces perfect for return gifts to grand paintings that can be the centerpiece of any room. 
+            The price of each painting varies based on size, intricacy, and customization options.
+          </p>
+          <h3 className="text-xl font-semibold mb-2">Painting Sizes and Pricing:</h3>
+          <ul className="list-disc list-inside mb-4">
+            <li>Small Sizes: 10×8 inches, 12×10 inches</li>
+            <li>Medium Sizes: 15×12 inches, 18×14 inches, 20×16 inches, 24×18 inches</li>
+            <li>Large Sizes: 30×24 inches, 36×24 inches</li>
+            <li>Extra-Large Sizes: 4×3 feet, 6×4 feet, 8×4 feet, 8×6 feet</li>
+          </ul>
+          <p>
+            Our pricing reflects the quality and craftsmanship of each piece, with prices ranging from ₹1500 to over ₹3 lakhs, depending on the size and intricacy of the painting.
+          </p>
+          <h3 className="text-xl font-semibold mb-2">Customization:</h3>
+          <p>
+            We understand that each space and individual preference is unique. Therefore, we offer customization options to ensure your Tanjore Painting fits perfectly into your desired setting:
+          </p>
+          <ul className="list-disc list-inside mb-4">
+            <li>Custom Sizes: Available upon request to match your specific requirements.</li>
+            <li>Design Preferences: Tailored to include specific themes, colors, or subjects.</li>
+            <li>Personalized Gifts: Unique paintings designed for special occasions or return gifts.</li>
+          </ul>
+        </section>
 
-      <section className="mb-16">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Showcase of Our Works</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {works.map((work, index) => (
-            <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-md">
-              <img src={work.image} alt={work.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-900">{work.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-        <button onClick={()=> Navigate('/gallery')} className='bg-yellow-500 p-2 rounded text-white m-2 float-end'>More Works</button>
-      </section>
-
-      <section>
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Contact Us</h2>
-        <div className="text-lg text-gray-700">
-          <p><strong>Email:</strong> contact@indianart.com</p>
-          <p><strong>Phone:</strong> +91 12345 67890</p>
-          <p><strong>Address:</strong> 123 Art Street, Culture City, India</p>
-        </div>
-      </section>
+        <section className="mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold  dark:text-indigo-400 mb-4">Contact Us for Custom Orders</h2>
+          <div className="flex items-center mb-4">
+            <MdLocationOn className="text-2xl mr-2  dark:text-indigo-400" />
+            <p>Sri Ranga Tanjore Art Gallery, 10/2, Annai Complex, Mambazhasalai, Ammamandapam Road, Srirangam, Trichy-6.</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <FaPhoneAlt className="text-2xl mr-2  dark:text-indigo-400" />
+            <p>Call: 9629892768</p>
+          </div>
+          <p>
+            Explore the timeless beauty of Tanjore Paintings in the size and style that suits your needs. Let us help you bring a piece of this magnificent art form into your home.
+          </p>
+        </section>
+        
+        <footer className="text-center mt-10">
+          <h2 className="text-2xl font-bold  dark:text-indigo-400 mb-4">For Orders and Enquiries:</h2>
+          <p className="text-lg mb-2">Sri Ranga Tanjore Art Gallery, 10/2, Annai Complex, Mambazhasalai, Ammamandapam Road, Srirangam, Trichy-6.</p>
+          <p className="text-lg mb-2">Call: 9629892768</p>
+          <p>Visit us to explore the timeless beauty of Tanjore Paintings and be a part of preserving this magnificent art form.</p>
+        </footer>
+      </div>
     </div>
   );
 };
 
-export default Services;
+export default ServicePage;
