@@ -3,6 +3,8 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../services/AuthContext';
 import logo from '../assets/lgo.jpg';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import '../index.css'
+
 
 const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
@@ -48,11 +50,11 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-50 ${visible ? 'top-0' : '-top-20'} transition-all duration-300 shadow-md`}>
-      <div className="max-w-screen-xl flex items-center justify-between p-4 mx-auto">
+    <nav className={`bg-secondary text-white border-gray-200 dark:bg-gray-900 fixed w-full z-50 ${visible ? 'top-0' : '-top-20'} transition-all duration-300 shadow-md`}>
+      <div className="flex items-center justify-between p-4">
         <Link to="/" className="flex items-center">
           <img src={logo} className="h-16 mr-2" alt="Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white hidden md:block">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white hidden md:block ">
             Sri Ranga Tanjore Art Gallery
           </span>
         </Link>
@@ -64,21 +66,21 @@ const Navbar = () => {
           aria-expanded={isMobileMenuOpen}
         >
           <span className="sr-only">Open main menu</span>
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars/>}
         </button>
         <div
-          className={`fixed inset-0 z-40 bg-gray-50 dark:bg-gray-800 transition-transform duration-500 ease-in-out transform ${
+          className={`fixed inset-0 z-40 bg-secondary dark:bg-gray-800 transition-transform duration-500 ease-in-out transform ${
             isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           } md:hidden`}
         >
           <div className="flex flex-col items-center justify-center h-full">
-            <ul className="font-medium flex flex-col space-y-4">
+            <ul className="font-medium flex flex-col space-y-4 ">
               {navLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className={`text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-lg font-medium dark:text-white dark:hover:bg-gray-700 ${
-                      location.pathname === link.path ? 'bg-gray-200 dark:bg-gray-600' : ''
+                    className={`text-white hover:bg-gray-100 px-3 py-2 rounded-md text-lg font-medium dark:hover:bg-gray-700 ${
+                      location.pathname === link.path ? 'underline' : ''
                     }`}
                     onClick={closeMobileMenu}
                   >
@@ -91,7 +93,7 @@ const Navbar = () => {
                   <li>
                     <button
                       onClick={() => { navigate('/signup'); closeMobileMenu(); }}
-                      className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      className="block py-2 px-3  rounded hover:bg-gray-100 text-white dark:hover:bg-gray-700"
                     >
                       Sign Up
                     </button>
@@ -99,7 +101,7 @@ const Navbar = () => {
                   <li>
                     <button
                       onClick={() => { navigate('/login'); closeMobileMenu(); }}
-                      className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                      className="block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                       Login
                     </button>
@@ -110,7 +112,7 @@ const Navbar = () => {
                 <li>
                   <button
                     onClick={logout}
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    className="block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Logout
                   </button>
@@ -131,7 +133,7 @@ const Navbar = () => {
               <li key={link.path}>
                 <Link
                   to={link.path}
-                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
+                  className={`block py-2 px-3 text-white rounded  md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${
                     location.pathname === link.path ? 'text-blue-700 dark:text-blue-500' : ''
                   }`}
                 >
@@ -144,7 +146,7 @@ const Navbar = () => {
                 <li>
                   <button
                     onClick={() => navigate('/signup')}
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    className="block py-2 px-3 text-gray-900 rounded  md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   >
                     Sign Up
                   </button>
@@ -152,7 +154,7 @@ const Navbar = () => {
                 <li>
                   <button
                     onClick={() => navigate('/login')}
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    className="block py-2 px-3 text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   >
                     Login
                   </button>
@@ -163,7 +165,7 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={logout}
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 text-white rounded  md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Logout
                 </button>

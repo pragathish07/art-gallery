@@ -1,18 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
 
 /* Include other imports or directives below this line */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.font-playfair {
-  font-family: 'Playfair Display', serif;
+.bg-gradient-to-r {
+  background-color: #fcf8ef;
 }
 
+
+.text-c9ab81 {
+  color: #c9ab81;
+}
+
+.bg-primary {
+  background-color: #fcf8ef;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.bg-secondary {
+  background-color: #704000;
+} 
+  ul li {
+    font-size: 20px;
+  }
+   
+
+
+
+p{
+  font-size: 20px;
+}
 
 @layer components {
   .nav-link::after {
