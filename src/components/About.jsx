@@ -21,7 +21,7 @@ const AboutPage = () => {
         viewport={{ amount: 0.3 }}
         variants={sectionVariants}
       >
-        <header className="relative h-[700px] bg-cover bg-no-repeat" style={{ backgroundImage: "url('src/assets/about1.jpg')" }}>
+        <header className="relative h-[700px] bg-cover bg-no-repeat" style={{ backgroundImage: "url('/src/assets/about1.jpg')" }}>
           <div className="absolute inset-0 bg-black opacity-75"></div>
           <div className="relative z-10 flex items-center justify-center h-full text-white">
             <h1 className="text-6xl font-bold">About <br />Sri Ranga Tanjore Art Gallery</h1>
@@ -44,7 +44,7 @@ const AboutPage = () => {
           </p>
         </div>
         <div className='md:basis-1/2 mt-8 md:mt-0 relative animate-slide-in'>
-          <img src="src/assets/about1.jpg" alt="About" className="w-full h-auto" />
+          <img src="/src/assets/about1.jpg" alt="About" className="w-full h-auto" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="absolute inset-0 flex items-center justify-center text-white">
             <p className="text-lg max-w-2xl mx-auto">Our gallery features a diverse collection of traditional Indian art.</p>
