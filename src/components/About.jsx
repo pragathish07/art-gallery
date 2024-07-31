@@ -21,7 +21,7 @@ const AboutPage = () => {
         viewport={{ amount: 0.3 }}
         variants={sectionVariants}
       >
-        <header className="relative h-[700px] bg-cover bg-no-repeat" style={{ backgroundImage: "url('/src/assets/about1.jpg')" }}>
+        <header className="relative h-[700px] bg-cover bg-no-repeat" style={{ backgroundImage: "url('/about1.jpg')" }}>
           <div className="absolute inset-0 bg-black opacity-75"></div>
           <div className="relative z-10 flex items-center justify-center h-full text-white">
             <h1 className="text-6xl font-bold">About <br />Sri Ranga Tanjore Art Gallery</h1>
