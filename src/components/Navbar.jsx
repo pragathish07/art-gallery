@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../services/AuthContext';
-import logo from '../assets/lgo.jpg';
+import logo from '/lgo.jpg';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import '../index.css'
 
@@ -53,7 +53,7 @@ const Navbar = () => {
     <nav className={`bg-secondary text-white border-gray-200 dark:bg-gray-900 fixed w-full z-50 ${visible ? 'top-0' : '-top-20'} transition-all duration-300 shadow-md`}>
       <div className="flex items-center justify-between p-4">
         <Link to="/" className="flex items-center">
-          <img src={logo} className="h-16 mr-2" alt="Logo" />
+          <img src='/lgo.jpg' className="h-16 mr-2" alt="Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white hidden md:block ">
             Sri Ranga Tanjore Art Gallery
           </span>
