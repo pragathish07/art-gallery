@@ -99,7 +99,7 @@ const AboutSection = () => {
         </div>
 
         <div className="w-full lg:w-2/3 mt-8 lg:mt-0">
-          <img src="/src/assets/group1.jpg" alt="Mukesh Art Gallery" className="w-full h-auto rounded-lg shadow-lg" />
+          <img src="/group1.jpg" alt="Mukesh Art Gallery" className="w-full h-auto rounded-lg shadow-lg" />
         </div>
       </div>
       </div>
@@ -113,7 +113,7 @@ const AboutTheFounder = () => {
     <div className="px-4 py-8 md:px-32 md:py-16 bg-[#fcf8ef]">
       <div className="md:float-right md:ml-8 mb-4 md:mb-0 w-full md:w-1/3 lg:w-1/2">
         <img
-          src="/src/assets/founder.jpg"
+          src="/founder.jpg"
           alt="Dr. L. Ramanujam"
           className="w-[500px] h-[600px] bg-contain rounded-lg shadow-lg"
           style={{ float: 'right', margin: '0 0 1em 1em' }}

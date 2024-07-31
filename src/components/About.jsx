@@ -44,7 +44,7 @@ const AboutPage = () => {
           </p>
         </div>
         <div className='md:basis-1/2 mt-8 md:mt-0 relative animate-slide-in'>
-          <img src="/src/assets/about1.jpg" alt="About" className="w-full h-auto" />
+          <img src="/about1.jpg" alt="About" className="w-full h-auto" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="absolute inset-0 flex items-center justify-center text-white">
             <p className="text-lg max-w-2xl mx-auto">Our gallery features a diverse collection of traditional Indian art.</p>
