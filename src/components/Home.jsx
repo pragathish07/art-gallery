@@ -4,9 +4,10 @@ import InfiniteCarousel from './Carousel/Carousel';
 import FeaturedSection from './Featured';
 import VisitUs from './VisitUs';
 import { useState } from 'react';
-import '../index.css'
-
-
+import { motion } from 'framer-motion'
+      import '../index.css';
+import { Link } from 'react-router-dom';
+import slidesData from './Carousel/data'
 
 const AboutSection = () => {
   const [expandedItem, setExpandedItem] = useState(null);
@@ -15,33 +16,44 @@ const AboutSection = () => {
     setExpandedItem(index === expandedItem ? null : index);
   };
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
+  };
+
   return (
-    <div className="lg:p-32 bg-[#fcf8ef] p-8">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-bold mb-4 text-c9ab81">ABOUT</h2>
-        <h3 className="text-3xl font-semibold mb-4 text-c9ab81">Our Art Gallery</h3>
+    <motion.div 
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ amount: 0.3 }}
+    variants={sectionVariants}
+    className="lg:px-32 lg:py-16 bg-[#fcf8ef] px-8 py-8">
+      <div className=" mb-16">
+        <h2 className="text-5xl font-bold mb-4 text-[#c9ab81] text-center">ABOUT</h2>
+        <h3 className="text-3xl font-semibold mb-4 text-[#c9ab81] text-center">Our Art Gallery</h3>
         <p className="mb-4">
           Mukesh Art Gallery stands as a luminous bastion of support for burgeoning local artists, nurturing their talent and granting them a global stage to unveil their creativity. As India’s premier art destination, we proudly showcase a breathtaking collection of over 15,000 meticulously framed paintings, embodying our founder's unwavering commitment to democratising art access.
         </p>
         <p className="font-bold mb-4">
           With a bold mission to redefine art as an attainable luxury, our gallery has garnered widespread acclaim and accolades, earning glowing reviews on leading platforms such as Google and TripAdvisor.
         </p>
-        <p>
+        <p className='mb-4'>
           Ranked among the elite top 10 galleries in India and proudly holding the esteemed title of Rajasthan’s foremost art sanctuary, Mukesh Art Gallery continues to radiate as a beacon of artistic brilliance and cultural enrichment. Our journey is woven with a dedication to fostering local talent, making art a universal language, and perpetuating the timeless legacy of creativity for generations to come.
         </p>
+        <button className='flex justify-center m-auto bg-third text-white font-bold px-4 py-2 rounded-full'>
+          <Link to="/about">More About us &#8594;</Link>
+        </button>
       </div>
 
-   
-
-    
-      
-     
-      <h1 className="text-5xl font-bold mb-16 text-center text-c9ab81">WHAT MAKES US</h1>
-      <div className="flex flex-col lg:flex-row items-start">
-        <div className="w-full lg:w-1/3 pr-4 ml-20">
-       
-        <h3 className="text-3xl font-semibold mb-4">India's Luxury Art Gallery</h3>
-          <div className="mb-4 pt-8 ">
+      <h1 className="text-5xl font-bold mb-16 text-center text-[#c9ab81]">WHAT MAKES US</h1>
+      <motion.div 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.3 }}
+      className="flex flex-col lg:flex-row items-start">
+        <div className="w-full lg:w-1/3 pr-4 lg:ml-20">
+          <h3 className="text-3xl font-semibold mb-4">India's Luxury Art Gallery</h3>
+          <div className="mb-4 pt-8">
             <button
               className="text-left w-full focus:outline-none"
               onClick={() => toggleItem(0)}
@@ -101,27 +113,33 @@ const AboutSection = () => {
         <div className="w-full lg:w-2/3 mt-8 lg:mt-0">
           <img src="/group1.jpg" alt="Mukesh Art Gallery" className="w-full h-auto rounded-lg shadow-lg" />
         </div>
-      </div>
-      </div>
-   
+      </motion.div>
+    </motion.div>
   );
 };
 
-
 const AboutTheFounder = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
+  };
   return (
-    <div className="px-4 py-8 md:px-32 md:py-16 bg-[#fcf8ef]">
+    <motion.div 
+    initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.2 }}
+        variants={sectionVariants}
+    className="px-4 py-8 md:px-32 md:py-16 bg-[#fcf8ef]">
       <div className="md:float-right md:ml-8 mb-4 md:mb-0 w-full md:w-1/3 lg:w-1/2">
         <img
           src="/founder.jpg"
           alt="Dr. L. Ramanujam"
           className="w-[500px] h-[600px] bg-contain rounded-lg shadow-lg"
-          style={{ float: 'right', margin: '0 0 1em 1em' }}
         />
       </div>
       <div>
-        <h1 className="text-5xl font-bold mb-2 text-c9ab81">Meet</h1>
-        <h1 className="text-4xl font-semibold mb-4 text-c9ab81">Our Founder</h1>
+        <h1 className="text-5xl font-bold mb-2 text-[#c9ab81]">Meet</h1>
+        <h1 className="text-4xl font-semibold mb-4 text-[#c9ab81]">Our Founder</h1>
         <p className="mb-4">
           Dr. L. Ramanujam, a native of Srirangam in Trichy District, is celebrated for his exquisite Tanjore Paintings. With over 60 years of mastery, he has devoted his life to this traditional art form, creating works that resonate with beauty and cultural significance.
         </p>
@@ -150,24 +168,17 @@ const AboutTheFounder = () => {
           Under Mrs. R. Lavanya's stewardship, the gallery has expanded its services, offering custom orders and delivering artworks and expertise worldwide. Her teachings have crossed borders, with students globally carrying forward the heritage and artistry of Tanjore Painting.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
-
-
-
-
-
-
 
 const Home = () => {
   return (
     <div className='bg-primary'>
       <Navbar />
-      <InfiniteCarousel />
+      <InfiniteCarousel slidesData={slidesData}/>
       <AboutSection />
       <AboutTheFounder/>
-
       <FeaturedSection />
       <VisitUs/>
     </div>

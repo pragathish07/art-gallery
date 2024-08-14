@@ -21,7 +21,7 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto py-16 px-6">
+    <div className="max-w-md mx-auto py-16 px-6 mt-20">
       <h2 className="text-3xl font-bold mb-8">Sign Up</h2>
       <form onSubmit={handleSignup}>
         <div className="mb-4">

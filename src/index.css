@@ -10,6 +10,7 @@
 
 body {
   font-family: 'Cormorant Garamond', serif;
+  
 }
 
 .bg-gradient-to-r {
@@ -23,6 +24,10 @@ body {
 
 .bg-primary {
   background-color: #fcf8ef;
+}
+
+.bg-third{
+  background-color: #c9ab81
 }
 
 .font-cormorant {

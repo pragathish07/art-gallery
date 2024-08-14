@@ -4,14 +4,24 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
+/* const firebaseConfig = {
+  apiKey: "AIzaSyDhx3Pk40Nq-vEZMDAlOl_O8j43jjfDMPI",
+  authDomain: "art-gallery-f9745.firebaseapp.com",
+  projectId: "art-gallery-f9745",
+  storageBucket: "art-gallery-f9745.appspot.com",
+  messagingSenderId: "296371447702",
+  appId: "1:296371447702:web:21d3b9cf20c22fa2381fb7"
+}; */
+
+
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY, //"AIzaSyB0HgyfMsxpZBkecriw-aDCKMqLriweWh0",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTHDOMAIN, //"auth-dev-3a10e.firebaseapp.com",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,//"auth-dev-3a10e",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,//"auth-dev-3a10e.appspot.com",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGE_ID,//"1005205820678",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,//"1:1005205820678:web:8a382c263496998fc6fa87"
-};
+  apiKey: "AIzaSyDhx3Pk40Nq-vEZMDAlOl_O8j43jjfDMPI",
+  authDomain: "art-gallery-f9745.firebaseapp.com",
+  projectId: "art-gallery-f9745",
+  storageBucket: "art-gallery-f9745.appspot.com",
+  messagingSenderId: "296371447702",
+  appId: "1:296371447702:web:21d3b9cf20c22fa2381fb7"
+}
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

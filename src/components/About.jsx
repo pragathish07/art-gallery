@@ -3,6 +3,10 @@ import 'tailwindcss/tailwind.css';
 import { motion } from 'framer-motion';
 import { FaAward, FaPaintBrush, FaLightbulb, FaHandsHelping, FaGraduationCap } from 'react-icons/fa';
 import '../index.css'; // Assuming you have the animations in this file
+import { Link } from 'react-router-dom';
+import InfiniteCarousel from './Carousel/Carousel';
+import AboutData from './Carousel/about';
+import AboutCarousel from './Carousel/AboutCarousel';
 
 const AboutPage = () => {
 
@@ -12,17 +16,17 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="mt-20 font-cormorant text-gray-900 bg-primary">
+    <div className="mt-20 font-cormorant text-gray-900 bg-primary"> {/* Ensure the background color is set here */}
       {/* Header Section */}
       <motion.section
-        className="py-12 bg-white text-center px-4 sm:px-6 lg:px-8"
+        className="py-12 text-center px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
         variants={sectionVariants}
       >
         <header className="relative h-[700px] bg-cover bg-no-repeat" style={{ backgroundImage: "url('/about1.jpg')" }}>
-          <div className="absolute inset-0 bg-black opacity-75"></div>
+          <div className="absolute inset-0 bg-black opacity-60"></div>
           <div className="relative z-10 flex items-center justify-center h-full text-white">
             <h1 className="text-6xl font-bold">About <br />Sri Ranga Tanjore Art Gallery</h1>
           </div>
@@ -31,7 +35,7 @@ const AboutPage = () => {
 
       {/* What We Do Section */}
       <motion.section
-        className="py-12 flex flex-col md:flex-row bg-white text-center px-4 sm:px-6 lg:px-8"
+        className="py-12 flex flex-col md:flex-row text-center px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
@@ -54,7 +58,7 @@ const AboutPage = () => {
 
       {/* Our Mission Section */}
       <motion.section
-        className="py-12 bg-gray-100 text-center px-4 sm:px-6 lg:px-8"
+        className="py-12 text-center px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
@@ -68,7 +72,7 @@ const AboutPage = () => {
 
       {/* Our Achievements Section */}
       <motion.section
-        className="py-12 bg-white text-center px-4 sm:px-6 lg:px-8"
+        className="py-12 text-center px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
@@ -77,25 +81,25 @@ const AboutPage = () => {
         <h2 className="text-3xl font-bold text-c9ab81 mb-4 animate-fade-in">Our Achievements</h2>
         <div className="max-w-4xl mx-auto space-y-8 animate-slide-in">
           <div className="flex flex-wrap space-x-4 space-y-4 md:space-y-0 md:space-x-8">
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
               <h3 className="text-xl font-semibold mb-2">Vaazhum Kaivinai Pokkisham (Living Legend)</h3>
               <p>Awarded by the Tamil Nadu Government for his lifelong dedication and contribution to Tanjore Art.</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
               <h3 className="text-xl font-semibold mb-2">Kalai Mudhumani</h3>
               <p>Award for outstanding contribution to the arts.</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
               <h3 className="text-xl font-semibold mb-2">Raja Kalaignan Virudhu</h3>
               <p>Recognized for excellence in Tanjore Art.</p>
             </div>
           </div>
           <div className="flex flex-wrap space-x-4 space-y-4 md:space-y-0 md:space-x-8">
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
               <h3 className="text-xl font-semibold mb-2">Tanjore Art Best Kala Ratna National Award</h3>
               <p>National recognition for excellence in Tanjore Art.</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-md flex-1 min-w-[250px]">
               <h3 className="text-xl font-semibold mb-2">Raja Kalaignan Lifetime Achievement Award (2014)</h3>
               <p>Presented by the Tamil Nadu Government for exceptional contributions to the art form.</p>
             </div>
@@ -105,7 +109,7 @@ const AboutPage = () => {
 
       {/* Our Values Section */}
       <motion.section
-        className="py-12 bg-gray-100 text-center px-4 sm:px-6 lg:px-8"
+        className="py-12 text-center px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
@@ -136,25 +140,26 @@ const AboutPage = () => {
           <div className="bg-white p-6 rounded-lg shadow-md text-center animate-slide-in">
             <FaGraduationCap className="text-4xl text-yellow-500 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Education</h3>
-            <p>Mentoring the next generation of artists to carry forward the legacy of Tanjore Paintings.</p>
+            <p>Mentoring and educating the next generation of artists.</p>
           </div>
         </div>
       </motion.section>
 
       {/* Call to Action Section */}
       <motion.section
-        className="py-12 bg-white text-center px-4 sm:px-6 lg:px-8"
+        className="py-12 text-center px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
         variants={sectionVariants}
       >
-        <h2 className="text-3xl font-bold text-c9ab81 mb-4 animate-fade-in">Get in Touch</h2>
-        <p className="text-lg max-w-2xl mx-auto mb-8 animate-slide-in">
-          Interested in our artwork? Want to place a custom order? Contact us today and let's create something beautiful together.
+        <h2 className="text-3xl font-bold text-c9ab81 mb-4 animate-fade-in">Join Us in Preserving Tradition</h2>
+        <p className="text-lg max-w-2xl mx-auto animate-slide-in">
+          Support our mission to keep the legacy of traditional Indian art alive. Explore our gallery, participate in our workshops, or commission a custom piece that speaks to your soul.
         </p>
-        <a href="/contact" className="px-8 py-4 bg-c9ab81 text-white rounded-lg font-semibold animate-fade-in">Contact Us</a>
+        <button className="mt-8 bg-third  text-white py-3 px-6 rounded-full font-semibold shadow-lg animate-slide-in"><Link to="/gallery">Explore More</Link></button>
       </motion.section>
+      <AboutCarousel slidesData={AboutData} width={20}/>
     </div>
   );
 };

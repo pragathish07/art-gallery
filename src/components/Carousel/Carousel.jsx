@@ -1,27 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Carousel.css';
+import { motion } from 'framer-motion';
 
-const slidesData = [
-  {
-    id: 1,
-    image: 'https://via.placeholder.com/600x300',
-    caption: 'Slide 1',
-  },
-  {
-    id: 2,
-    image: 'https://via.placeholder.com/600x300',
-  },
-  {
-    id: 3,
-    image: 'https://via.placeholder.com/600x300',
-  },
-  {
-    id: 4,
-    image: 'https://via.placeholder.com/600x300',
-  },
-];
 
-const InfiniteCarousel = () => {
+const InfiniteCarousel = (
+  { slidesData }
+) => {
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalRef = useRef(null);
 
@@ -49,8 +34,19 @@ const InfiniteCarousel = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + slidesData.length) % slidesData.length);
   };
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
+  };
+
+
   return (
-    <div className="carousel-container">
+    <motion.div 
+    initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.3 }}
+        variants={sectionVariants}
+    className="carousel-container">
       <div className="carousel-slide" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {slidesData.map((slide, index) => (
           <div key={slide.id} className="carousel-item">
@@ -64,7 +60,7 @@ const InfiniteCarousel = () => {
       <button className="carousel-control next" onClick={goToNextSlide}>
         &#10095;
       </button>
-    </div>
+    </motion.div>
   );
 };
 
