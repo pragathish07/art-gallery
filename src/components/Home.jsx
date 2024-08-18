@@ -113,7 +113,7 @@ const AboutSection = () => {
         </div>
 
         <div className="w-full lg:w-2/3 mt-8 lg:mt-0">
-          <img src="/group1.jpg" alt="Mukesh Art Gallery" className="w-full h-auto rounded-lg shadow-lg" />
+          <img src="/group1.jpg" alt="sri ranga Art Gallery" className="w-full h-auto rounded-lg shadow-lg" />
         </div>
       </motion.div>
     </motion.div>

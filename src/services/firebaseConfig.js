@@ -21,7 +21,7 @@ const firebaseConfig = {
   storageBucket: "art-gallery-f9745.appspot.com",
   messagingSenderId: "296371447702",
   appId: "1:296371447702:web:21d3b9cf20c22fa2381fb7"
-}
+};
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

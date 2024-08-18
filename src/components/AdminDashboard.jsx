@@ -5,6 +5,43 @@ import { db, storage } from '../services/firebaseConfig';
 import { useAuth } from '../services/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
+
+
+function MessagesTab() {
+  const [submissions, setSubmissions] = useState([]);
+
+  useEffect(() => {
+    const fetchSubmissions = async () => {
+      try {
+        // fetch the contact form submissions from the 'contactForms' collection
+        const querySnapshot = await getDocs(collection(db, 'contactForms'));
+        const submissionsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setSubmissions(submissionsData);
+      } catch (error) {
+        console.error('Error fetching submissions:', error);
+      }
+    };
+
+    fetchSubmissions();
+  }, []);
+
+  return (
+    <div className="min-h-screen">
+      <h2 className="text-3xl font-bold mb-6 text-[#c9ab81]">Contact Form Submissions</h2>
+      <ul className="space-y-4">
+        {submissions.map(submission => (
+          <li key={submission.id} className="bg-white shadow-md rounded-lg p-4 border border-gray-200">
+            <p className="text-lg font-semibold text-gray-700"><strong>Name:</strong> {submission.name}</p>
+            <p className="text-lg font-semibold text-gray-700"><strong>Email:</strong> {submission.email}</p>
+            <p className="text-lg font-semibold text-gray-700"><strong>Message:</strong> {submission.message}</p>
+            <p className="text-sm text-gray-500"><strong>Submitted on:</strong> {new Date(submission.timestamp.seconds * 1000).toLocaleString()}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 const AdminDashboard = () => {
   const { user } = useAuth();
   const [paintings, setPaintings] = useState([]);
@@ -154,10 +191,9 @@ const AdminDashboard = () => {
         )}
 
         {activeTab === 'stats' && (
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Statistics</h3>
-            <p>Statistics content goes here...</p>
-          </div>
+         
+            <MessagesTab/>
+          
         )}
       </main>
     </div>
