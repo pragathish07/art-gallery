@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../services/AuthContext';
-import logo from '/lgo.jpg';
+import logo from '/logo.jpg';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import '../index.css';
 import { HiBars3CenterLeft } from 'react-icons/hi2';

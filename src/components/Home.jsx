@@ -23,27 +23,29 @@ const AboutSection = () => {
 
   return (
     <motion.div 
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ amount: 0.3 }}
-    variants={sectionVariants}
-    className="lg:px-32 lg:py-16 bg-[#fcf8ef] px-8 py-8">
-      <div className=" mb-16">
-        <h2 className="text-5xl font-bold mb-4 text-[#c9ab81] text-center">ABOUT</h2>
-        <h3 className="text-3xl font-semibold mb-4 text-[#c9ab81] text-center">Our Art Gallery</h3>
-        <p className="mb-4">
-          Mukesh Art Gallery stands as a luminous bastion of support for burgeoning local artists, nurturing their talent and granting them a global stage to unveil their creativity. As India’s premier art destination, we proudly showcase a breathtaking collection of over 15,000 meticulously framed paintings, embodying our founder's unwavering commitment to democratising art access.
-        </p>
-        <p className="font-bold mb-4">
-          With a bold mission to redefine art as an attainable luxury, our gallery has garnered widespread acclaim and accolades, earning glowing reviews on leading platforms such as Google and TripAdvisor.
-        </p>
-        <p className='mb-4'>
-          Ranked among the elite top 10 galleries in India and proudly holding the esteemed title of Rajasthan’s foremost art sanctuary, Mukesh Art Gallery continues to radiate as a beacon of artistic brilliance and cultural enrichment. Our journey is woven with a dedication to fostering local talent, making art a universal language, and perpetuating the timeless legacy of creativity for generations to come.
-        </p>
-        <button className='flex justify-center m-auto bg-third text-white font-bold px-4 py-2 rounded-full'>
-          <Link to="/about">More About us &#8594;</Link>
-        </button>
-      </div>
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ amount: 0.3 }}
+  variants={sectionVariants}
+  className="lg:px-32 lg:py-16 bg-[#fcf8ef] px-8 py-8">
+  <div className=" mb-16">
+    <h2 className="text-5xl font-bold mb-4 text-[#c9ab81] text-center">ABOUT</h2>
+    <h3 className="text-3xl font-semibold mb-4 text-[#c9ab81] text-center">Sri Ranga Tanjore Art Gallery</h3>
+    <p className="mb-4">
+      Sri Ranga Tanjore Art Gallery is a celebration of a rich legacy of Tanjore Painting, situated in the heart of Srirangam. Founded by the esteemed Dr. L. Ramanujam, our gallery stands as a beacon of Tanjore Painting's heritage, admired and recognized by art enthusiasts worldwide.
+    </p>
+    <p className="font-bold mb-4">
+      With over 60 years of mastery, Dr. L. Ramanujam has devoted his life to this traditional art form, creating works that resonate with beauty and cultural significance. His legacy is carried forward by his daughter, Mrs. R. Lavanya, who continues to preserve and promote the rich heritage of Tanjore Art.
+    </p>
+    <p className="mb-4">
+      Recognized with prestigious awards such as the Vaazhum Kaivinai Pokkisham (Living Legend) by the Tamil Nadu Government, our gallery offers not just art, but a profound connection to India's cultural history. From custom orders to teaching the art form globally, we are dedicated to making Tanjore Art accessible to all.
+    </p>
+    <button className='flex justify-center m-auto bg-third text-white font-bold px-4 py-2 rounded-full'>
+      <Link to="/about">More About Us &#8594;</Link>
+    </button>
+  </div>
+
+
 
       <h1 className="text-5xl font-bold mb-16 text-center text-[#c9ab81]">WHAT MAKES US</h1>
       <motion.div 
@@ -58,7 +60,7 @@ const AboutSection = () => {
               className="text-left w-full focus:outline-none"
               onClick={() => toggleItem(0)}
             >
-              <h5 className="text-3xl mb-2">Expansive Environment {expandedItem === 0 ? '-' : '+'}</h5>
+              <h5 className="text-3xl mb-2">Expansive Environment {expandedItem === 0 ? <span> &#8208; </span> : '+'}</h5>
               {expandedItem === 0 && (
                 <p className="ml-4">
                   From framing to 12-colour museum-quality printing, our vertically integrated operations ensure meticulous craftsmanship and attention to detail at every stage. With a team of 150 exceptionally talented artists, we bring visions to life with passion and precision.
@@ -72,7 +74,7 @@ const AboutSection = () => {
               className="text-left w-full focus:outline-none"
               onClick={() => toggleItem(1)}
             >
-              <h5 className="text-3xl mb-2">Diverse Treasures {expandedItem === 1 ? '-' : '+'}</h5>
+              <h5 className="text-3xl mb-2">Diverse Treasures {expandedItem === 1 ? <span> &#8208; </span> : '+'}</h5>
               {expandedItem === 1 && (
                 <p className="ml-4">
                   Our gallery features a rich tapestry of artworks that celebrate the cultural and artistic diversity of India. From traditional to contemporary, each piece is curated with an eye for excellence.
@@ -86,7 +88,7 @@ const AboutSection = () => {
               className="text-left w-full focus:outline-none"
               onClick={() => toggleItem(2)}
             >
-              <h5 className="text-3xl mb-2">Accessible Elegance {expandedItem === 2 ? '-' : '+'}</h5>
+              <h5 className="text-3xl mb-2">Accessible Elegance {expandedItem === 2 ? <span> &#8208; </span> : '+'}</h5>
               {expandedItem === 2 && (
                 <p className="ml-4">
                   We believe that art should be accessible to everyone. Our gallery offers a range of artworks at different price points, ensuring that everyone can own a piece of beauty.
@@ -100,7 +102,7 @@ const AboutSection = () => {
               className="text-left w-full focus:outline-none"
               onClick={() => toggleItem(3)}
             >
-              <h5 className="text-3xl mb-2">Integrated Mastery {expandedItem === 3 ? '-' : '+'}</h5>
+              <h5 className="text-3xl mb-2">Integrated Mastery {expandedItem === 3 ? <span> &#8208; </span> : '+'}</h5>
               {expandedItem === 3 && (
                 <p className="ml-4">
                   Our gallery is not just a showcase of art but a hub of creativity. We offer workshops, art classes, and events that bring artists and art lovers together in a dynamic and inspiring environment.
