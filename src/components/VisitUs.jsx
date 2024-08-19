@@ -7,12 +7,12 @@ const VisitUs = () => {
       <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
         <h2 className="text-[#c9ab81] font-semibold mb-2 text-3xl">FIND THE GALLERY</h2>
         <h3 className="text-2xl font-bold mb-4">Visit Us</h3>
-        <p>Sri Ranga Tanjore Art Gallery</p>
-        <p>10/2, Annai Complex, Mambazhasalai, Ammamandapam Road, Srirangam, Trichy-6.</p>
-        <p>+91-9629892768</p>
-        <p>
-          <a href="mailto:info@mukeshartandframe.com" className="text-blue-600">
-            gmail address
+        <p className='text-2xl'>Sri Ranga Tanjore Art Gallery</p>
+        <p className='text-2xl'>10/2, Annai Complex, Mambazhasalai, Ammamandapam Road, Srirangam, Trichy-6.</p>
+        <p className='text-2xl'>+91-9629892768</p>
+        <p className='text-2xl'>
+          <a href="mailto:srirangatanjoreartgallery@gmail.com" className="text-blue-600">
+            srirangatanjoreartgallery@gmail.com
           </a>
         </p>
         <a

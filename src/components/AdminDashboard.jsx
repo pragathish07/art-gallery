@@ -127,7 +127,7 @@ const AdminDashboard = () => {
           <ul>
             <li className={`mb-2 p-2 cursor-pointer ${activeTab === 'list' ? 'bg-gray-700' : ''}`} onClick={() => setActiveTab('list')}>List Paintings</li>
             <li className={`mb-2 p-2 cursor-pointer ${activeTab === 'add' ? 'bg-gray-700' : ''}`} onClick={() => setActiveTab('add')}>Add Painting</li>
-            <li className={`mb-2 p-2 cursor-pointer ${activeTab === 'stats' ? 'bg-gray-700' : ''}`} onClick={() => setActiveTab('stats')}>Statistics</li>
+            <li className={`mb-2 p-2 cursor-pointer ${activeTab === 'messages' ? 'bg-gray-700' : ''}`} onClick={() => setActiveTab('messages')}>Messages</li>
           </ul>
         </nav>
       </aside>
@@ -139,13 +139,7 @@ const AdminDashboard = () => {
           <>
             <div className="flex flex-col md:flex-row md:justify-between items-start mb-4">
               <h3 className="text-2xl font-bold mb-2 md:mb-0">Manage Paintings</h3>
-              <input
-                type="text"
-                placeholder="Search by title..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="p-2 border border-gray-300 rounded-lg w-full md:w-1/3"
-              />
+              
             </div>
             {filteredPaintings.length > 0 ? (
               <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
@@ -190,7 +184,7 @@ const AdminDashboard = () => {
           </form>
         )}
 
-        {activeTab === 'stats' && (
+        {activeTab === 'messages' && (
          
             <MessagesTab/>
           

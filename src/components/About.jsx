@@ -44,7 +44,7 @@ const AboutPage = () => {
         <div className='md:basis-1/2'>
           <h2 className="text-3xl font-bold text-c9ab81 mb-4 animate-fade-in">What We Do</h2>
           <p className="text-lg max-w-2xl mx-auto animate-slide-in">
-            We create beautiful traditional Indian art pieces, blending rich heritage with modern creativity. Our artworks include Tanjore paintings, Madhubani art, and more, crafted with meticulous attention to detail.
+            We create beautiful traditional Indian art pieces, blending rich heritage with modern creativity. Our artworks include Tanjore paintings, and more, crafted with meticulous attention to detail.
           </p>
         </div>
         <div className='md:basis-1/2 mt-8 md:mt-0 relative animate-slide-in'>

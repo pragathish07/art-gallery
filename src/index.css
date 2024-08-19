@@ -8,8 +8,15 @@
 @tailwind utilities;
 
 
+
+
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Cormorant Garamond', serif;
+  
   
 }
 

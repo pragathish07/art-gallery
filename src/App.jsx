@@ -17,21 +17,17 @@ import EditPainting from './components/EditPaintings'
 import AdminRoute from './components/AdminRoute'
 import ProtectedRoute from './components/protectedRoutes'
 import Preloader from './components/Preloader'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
 
- /*  const [loading, setLoading] = useState(true);
-
-  const handleLoadingComplete = () => {
-    setLoading(false);
-  }; */
  
 
   return (
     <>
     <AuthProvider>
     <Navbar />
-   {/*  <Preloader onLoadingComplete={handleLoadingComplete}/> */}
+    <ScrollToTop />
     
     <Routes>
 

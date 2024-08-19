@@ -5,7 +5,7 @@ import FeaturedSection from './Featured';
 import VisitUs from './VisitUs';
 import { useState } from 'react';
 import { motion } from 'framer-motion'
-      import '../index.css';
+import '../index.css';
 import { Link } from 'react-router-dom';
 import slidesData from './Carousel/data'
 
@@ -30,17 +30,17 @@ const AboutSection = () => {
   className="lg:px-32 lg:py-16 bg-[#fcf8ef] px-8 py-8">
   <div className=" mb-16">
     <h2 className="text-5xl font-bold mb-4 text-[#c9ab81] text-center">ABOUT</h2>
-    <h3 className="text-3xl font-semibold mb-4 text-[#c9ab81] text-center">Sri Ranga Tanjore Art Gallery</h3>
-    <p className="mb-4">
+    <h3 className="text-3xl font-bold mb-4 text-[#c9ab81] text-center">Sri Ranga Tanjore Art Gallery</h3>
+    <p className="mb-4 text-2xl">
       Sri Ranga Tanjore Art Gallery is a celebration of a rich legacy of Tanjore Painting, situated in the heart of Srirangam. Founded by the esteemed Dr. L. Ramanujam, our gallery stands as a beacon of Tanjore Painting's heritage, admired and recognized by art enthusiasts worldwide.
     </p>
-    <p className="font-bold mb-4">
+    <p className="font-bold mb-4 text-2xl">
       With over 60 years of mastery, Dr. L. Ramanujam has devoted his life to this traditional art form, creating works that resonate with beauty and cultural significance. His legacy is carried forward by his daughter, Mrs. R. Lavanya, who continues to preserve and promote the rich heritage of Tanjore Art.
     </p>
-    <p className="mb-4">
+    <p className="mb-4 text-2xl">
       Recognized with prestigious awards such as the Vaazhum Kaivinai Pokkisham (Living Legend) by the Tamil Nadu Government, our gallery offers not just art, but a profound connection to India's cultural history. From custom orders to teaching the art form globally, we are dedicated to making Tanjore Art accessible to all.
     </p>
-    <button className='flex justify-center m-auto bg-third text-white font-bold px-4 py-2 rounded-full'>
+    <button className='flex justify-center m-auto bg-third text-white font-bold px-4 py-4 rounded-full text-xl'>
       <Link to="/about">More About Us &#8594;</Link>
     </button>
   </div>
@@ -136,37 +136,37 @@ const AboutTheFounder = () => {
         <img
           src="/founder.jpg"
           alt="Dr. L. Ramanujam"
-          className="w-[500px] h-[600px] bg-contain rounded-lg shadow-lg"
+          className="w-[500px] h-[600px] bg-contain rounded-lg shadow-lg m-auto"
         />
       </div>
       <div>
         <h1 className="text-5xl font-bold mb-2 text-[#c9ab81]">Meet</h1>
         <h1 className="text-4xl font-semibold mb-4 text-[#c9ab81]">Our Founder</h1>
-        <p className="mb-4">
+        <p className="mb-4 text-2xl">
           Dr. L. Ramanujam, a native of Srirangam in Trichy District, is celebrated for his exquisite Tanjore Paintings. With over 60 years of mastery, he has devoted his life to this traditional art form, creating works that resonate with beauty and cultural significance.
         </p>
-        <h3 className="text-2xl text-center font-semibold mb-4">Leadership</h3>
-        <p className="mb-4">
+        <h3 className="text-2xl text-center font-bold mb-4">Leadership</h3>
+        <p className="mb-4 text-2xl">
           Mrs. R. Lavanya, the Managing Director of Sri Ranga Tanjore Art Gallery, has seamlessly carried forward her father’s legacy. Under her leadership, the gallery has flourished, preserving the rich heritage of Tanjore Art and extending its reach globally.
         </p>
-        <h4 className="text-2xl font-semibold mb-2">Recognitions:</h4>
-        <p className="mb-4">
-          <span className="font-semibold">Raja Kalaignan Lifetime Achievement Award (2014):</span> Presented by the Tamil Nadu Government for her exceptional contributions to the art form.
+        <h4 className="text-2xl font-bold mb-2">Recognitions:</h4>
+        <p className="mb-4 text-2xl">
+          <span className="font-bold">Raja Kalaignan Lifetime Achievement Award (2014):</span> Presented by the Tamil Nadu Government for her exceptional contributions to the art form.
         </p>
-        <h5 className="text-xl font-semibold mb-2">Contributions and Initiatives:</h5>
-        <p className="mb-4">
-          <span className="text-xl font-semibold">Reviving Heritage:</span> Innovatively reviving traditional art through contemporary methods, such as rangoli floor decorations <span className="font-semibold">featured in "The Hindu."</span>
+        <h5 className="text-xl font-bold mb-2">Contributions and Initiatives:</h5>
+        <p className="mb-4 text-2xl">
+          <span className="text-xl font-bold">Reviving Heritage:</span> Innovatively reviving traditional art through contemporary methods, such as rangoli floor decorations <span className="font-bold">featured in "The Hindu."</span>
         </p>
-        <p className="mb-4">
-          <span className="text-xl font-semibold">Empowering Women:</span> Using Tanjore Painting as a tool for societal change and women's empowerment.
+        <p className="mb-4 text-2xl">
+          <span className="text-xl font-bold">Empowering Women:</span> Using Tanjore Painting as a tool for societal change and women's empowerment.
         </p>
-        <p className="mb-4">
-          <span className="text-xl font-semibold">Cultural Connections:</span> Her artworks have been displayed at the prestigious Ayodhya Ramar Temple, spreading cultural richness.
+        <p className="mb-4 text-2xl">
+          <span className="text-xl font-bold">Cultural Connections:</span> Her artworks have been displayed at the prestigious Ayodhya Ramar Temple, spreading cultural richness.
         </p>
-        <p className="mb-4">
-          <span className="text-xl font-semibold">Artistic Engagement:</span> Presented a Tanjore Painting at the Dinamalar Editor's Family Function, highlighting her influence in artistic circles.
+        <p className="mb-4 text-2xl">
+          <span className="text-xl font-bold">Artistic Engagement:</span> Presented a Tanjore Painting at the Dinamalar Editor's Family Function, highlighting her influence in artistic circles.
         </p>
-        <p>
+        <p className='text-2xl'>
           Under Mrs. R. Lavanya's stewardship, the gallery has expanded its services, offering custom orders and delivering artworks and expertise worldwide. Her teachings have crossed borders, with students globally carrying forward the heritage and artistry of Tanjore Painting.
         </p>
       </div>

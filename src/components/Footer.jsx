@@ -12,8 +12,8 @@ const Footer = () => {
           <p>+91- 9629892768
           </p>
           <p>
-            <a href="mailto:" className="text-blue-600">
-              
+            <a href="mailto:srirangatanjoreartgallery@gmail.com" className="text-blue-600">
+            srirangatanjoreartgallery@gmail.com
             </a>
           </p>
         </div>
