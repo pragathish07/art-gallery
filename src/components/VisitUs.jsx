@@ -4,7 +4,7 @@ import img from '/g-icon.png';
 const VisitUs = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-between items-start p-8 lg:p-16 lg:px-36 bg-[#fcf8ef]">
-      <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
+      <div className="w-full lg:w-1/3 mb-8 lg:mb-0 mr-2">
         <h2 className="text-[#c9ab81] font-semibold mb-2 text-3xl">FIND THE GALLERY</h2>
         <h3 className="text-2xl font-bold mb-4">Visit Us</h3>
         <p className='text-2xl'>Sri Ranga Tanjore Art Gallery</p>
